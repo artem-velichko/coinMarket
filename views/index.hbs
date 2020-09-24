@@ -1,0 +1,36 @@
+<div class='mt-5'>
+    <form action='/' method='POST'>
+        <label for='select'>Choose interval</label>
+        <select id='selectTime' name="select" class="custom-select custom-select-lg mb-3">
+            <option value='default'>No interval specified</option>
+            <option value="interval1">1 minute</option>
+            <option value="interval2">30 minutes</option>
+            <option value="interval3">1 hour</option>
+            <option value="interval4">1 day</option>
+        </select>
+        <button type='submit' class='btn btn-primary'>Show</button>
+    </form>
+</div>
+
+{{#if table.length}} 
+    <div class="mt-5">
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Price</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each table}}
+            <tr>
+                <td>{{ price }}</td>
+                <td>{{ date }}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+    </table>
+    </div>
+{{else}}
+    <p>No Prices</p>
+{{/if}}
